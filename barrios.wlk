@@ -1,5 +1,5 @@
 class Barrios {
-  const elementos = []
+  const property elementos = []
 
   method agregarElemento(unElemento) {
     elementos.add(unElemento)
@@ -9,19 +9,19 @@ class Barrios {
     elementos.addAll(listaElementos)
   }
 
-  method cantidadElementosBuenos()=
+  method elementosBuenos()=
     elementos.count({
       elemento => elemento.esBueno()
     })
   
-  method cantidadElementosNoBuenos()=
+  method elementosNoBuenos()=
     elementos.count({
       elemento => !elemento.esBueno()
     })
   
   method esCopado()=
     if (!elementos.isEmpty()) {
-      self.cantidadElementosBuenos() > 
-      self.cantidadElementosNoBuenos()
+      self.elementosBuenos() > 
+      self.elementosNoBuenos()
     }
 }
